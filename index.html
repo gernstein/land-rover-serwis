@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Land Rover Car Serwis | Sebastian Woźniak - Jawczyce</title>
+    <style>
+        :root {
+            --primary: #0C3220; /* Klasyczna zieleń British Racing Green */
+            --secondary: #D4AF37; /* Eleganckie złoto/mosiądz dla akcentów */
+            --dark: #1A1A1A;
+            --light: #F4F6F4;
+            --gray: #666;
+            --border: #E0E0E0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--dark);
+            color: white;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid var(--secondary);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo h1 {
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: white;
+        }
+
+        .logo h1 span {
+            color: var(--secondary);
+        }
+
+        .logo p {
+            font-size: 12px;
+            color: #aaa;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 600;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--secondary);
+        }
+
+        .phone-nav {
+            background-color: var(--primary);
+            color: white !important;
+            padding: 8px 15px;
+            border-radius: 4px;
+            border: 1px solid var(--secondary);
+        }
+
+        .phone-nav:hover {
+            background-color: #061B11;
+            color: white;
+        }
+
+/* SEKCJA HERO: Zdjęcie prawdziwego Land Rovera na bezdrożach ze stałego źródła Wikimedia */
+        .hero {
+            background: linear-gradient(rgba(12, 50, 32, 0.75), rgba(26, 26, 26, 0.85)), 
+                        url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Land_Rover_90_Wading.JPG/960px-Land_Rover_90_Wading.JPG?_=20081209140758') center/cover no-repeat;
+            color: white;
+            padding: 130px 5%;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 42px;
+            margin-bottom: 15px;
+            font-weight: 700;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 30px auto;
+            color: #CDD7D2;
+            text-shadow: 0 1px 4px rgba(0,0,0,0.8);
+        }
+
+        .cta-btn {
+            background-color: var(--secondary);
+            color: var(--dark);
+            padding: 12px 30px;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-radius: 4px;
+            transition: background 0.3s, transform 0.2s;
+            display: inline-block;
+        }
+
+        .cta-btn:hover {
+            background-color: #BD9A2D;
+            transform: translateY(-2px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h3 {
+            font-size: 30px;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .section-title h3::after {
+            content: '';
+            width: 60px;
+            height: 3px;
+            background-color: var(--secondary);
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: 6px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--primary);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card h4 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .service-card p {
+            color: var(--gray);
+            font-size: 15px;
+        }
+
+        .info-section {
+            background-color: white;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+        }
+
+        .info-block h4 {
+            font-size: 20px;
+            color: var(--primary);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        .info-table td {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            font-size: 15px;
+        }
+
+        .info-table td :after {
+            content: "";
+            clear: both;
+            display: block;
+        }
+
+        .info-table td:first-child {
+            font-weight: 600;
+            color: var(--dark);
+            width: 30%;
+        }
+
+        .info-table td:last-child {
+            color: var(--gray);
+        }
+
+        .info-table a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .info-table a:hover {
+            text-decoration: underline;
+        }
+
+        .map-container {
+            margin-top: 20px;
+            border-radius: 6px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            height: 250px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            background-color: var(--light);
+            font-size: 14px;
+        }
+
+        .contact-form input:focus, .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .contact-form button {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-weight: 600;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: 4px;
+            width: 100%;
+            transition: background 0.3s;
+        }
+
+        .contact-form button:hover {
+            background-color: #061B11;
+        }
+
+        footer {
+            background-color: var(--dark);
+            color: #aaa;
+            padding: 30px 20px;
+            text-align: center;
+            font-size: 14px;
+            border-top: 1px solid #333;
+        }
+
+        footer p {
+            margin-bottom: 5px;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+            nav a {
+                margin: 0;
+            }
+            .hero h2 {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>LAND ROVER <span>CAR SERWIS</span></h1>
+            <p>Sebastian Woźniak</p>
+        </div>
+        <nav>
+            <a href="#uslugi">Usługi</a>
+            <a href="#o-nas">O firmie</a>
+            <a href="#kontakt">Kontakt</a>
+            <a href="tel:+48722372085" class="phone-nav">📞 Zadzwoń teraz</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>Niezależny Serwis Land Rover & Range Rover</h2>
+        <p>Profesjonalna diagnostyka, zaawansowane naprawy mechaniczne oraz pełen serwis eksploatacyjny brytyjskich ikon motoryzacji. Twój Land Rover w rękach specjalisty.</p>
+        <a href="#kontakt" class="cta-btn">Umów wizytę</a>
+    </section>
+
+    <section id="uslugi" class="container">
+        <div class="section-title">
+            <h3>Nasza Oferta</h3>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <h4>Diagnostyka Komputerowa</h4>
+                <p>Precyzyjne lokalizowanie usterek elektroniki, kodowanie modułów oraz pełna analiza pracy silnika i systemów pokładowych dedykowanym oprogramowaniem.</p>
+            </div>
+            <div class="service-card">
+                <h4>Mechanika Pojazdowa</h4>
+                <p>Kompleksowe naprawy jednostek napędowych (w tym wymagających silników V8 oraz Diesla), układów hamulcowych, kierowniczych i zawieszenia pneumatycznego.</p>
+            </div>
+            <div class="service-card">
+                <h4>Serwis Układów Napędowych</h4>
+                <p>Naprawa i uszczelnianie skrzyń biegów, reduktorów, mostów oraz profesjonalna regeneracja wałów napędowych i układów 4x4.</p>
+            </div>
+            <div class="service-card">
+                <h4>Przeglądy i Eksploatacja</h4>
+                <p>Okresowe wymiany filtrów i olejów (silnik, skrzynie biegów), serwis klimatyzacji oraz przygotowanie aut do wymagających tras terenowych.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="o-nas" class="info-section">
+        <div class="container info-grid">
+            <div class="info-block">
+                <h4>O Serwisie</h4>
+                <p style="color: var(--gray); margin-bottom: 15px;">Specjalizacja to klucz do niezawodności. LAND ROVER CAR SERWIS to warsztat stworzony z myślą o właścicielach samochodów, którzy nie uznają kompromisów. Doskonale rozumiemy specyfikę zaawansowanych konstrukcji off-road oraz luksusowych SUV-ów.</p>
+                <p style="color: var(--gray);">Dbamy o to, aby każda naprawa – od drobnej eliminacji wycieków płynów eksploatacyjnych po skomplikowane remonty silników – była realizowana terminowo, sprawnie i zgodnie z technologią marki.</p>
+            </div>
+
+            <div id="kontakt" class="info-block">
+                <h4>Dane Kontaktowe i dojazd</h4>
+                <table class="info-table">
+                    <tr>
+                        <td>Telefon:</td>
+                        <td><a href="tel:+48722372085">+48722372085</a></td>
+                    </tr>
+                    <tr>
+                        <td>Adres:</td>
+                        <td>Jawczyce 150, 32-020 Jawczyce</td>
+                    </tr>
+                    <tr>
+                        <td>NIP:</td>
+                        <td>6831835118</td>
+                    </tr>
+                    <tr>
+                        <td>REGON:</td>
+                        <td>542606190</td>
+                    </tr>
+                </table>
+                
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d50544.46698612407!2d20.186404!3d49.950112!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47163f00307f7a99%3A0xd618ff97240f2f3!2sLand%20Rover%20Car%20Serwis%20-%20Sebastian%20Wo%C5%BAniak!5e1!3m2!1spl!2spl!4v1783958766075!5m2!1spl!2spl"
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="info-block">
+                <h4>Formularz Zgłoszeniowy</h4>
+                <form class="contact-form" action="https://formspree.io/f/TUTAJ_TWÓJ_IDENTYFIKATOR" method="POST">
+                    <input type="text" name="name" placeholder="Imię i nazwisko / Nazwa firmy" required>
+                    <input type="tel" name="phone" placeholder="Numer telefonu" required>
+                    <input type="text" name="car_model" placeholder="Model samochodu (np. Discovery 4)" required>
+                    <textarea name="message" rows="4" placeholder="Opisz problem lub potrzebną usługę..." required></textarea>
+                    <button type="submit">Wyślij zgłoszenie</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 LAND ROVER CAR SERWIS Sebastian Woźniak. Wszystkie prawa zastrzeżone.</p>
+        <p style="font-size: 12px; color: #666;">Strona ma charakter informacyjny. Prawa do znaków towarowych należą do ich prawnych właścicieli.</p>
+    </footer>
+
+</body>
+</html>
