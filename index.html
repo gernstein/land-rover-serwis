@@ -237,7 +237,7 @@
             border-color: var(--secondary);
         }
 
-        /* Kompaktowa Sekcja Usług (Horyzontalna linia pod Hero) */
+        /* Kompaktowa Sekcja Usług */
         .container-services {
             max-width: 1400px;
             margin: 0 auto;
@@ -292,7 +292,7 @@
             line-height: 1.4;
         }
 
-        /* Dolna sekcja Split-Screen (Dane + Mapa) */
+        /* Dolna sekcja Split-Screen */
         .info-pane {
             background-color: var(--surface);
             border-top: 1px solid var(--border);
@@ -354,7 +354,7 @@
             border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        /* Dostosowanie do mniejszych rozdzielczości desktopowych */
+        /* Responsywność */
         @media (max-width: 1200px) {
             .services-layout { grid-template-columns: repeat(2, 1fr); }
         }
@@ -370,7 +370,6 @@
             .services-layout { grid-template-columns: 1fr; }
         }
 
-        /* NAPRAWA UKŁADU MOBILNEGO: Dedykowane style dla smartfonów */
         @media (max-width: 576px) {
             header {
                 flex-direction: column;
@@ -386,7 +385,6 @@
                 gap: 10px;
             }
 
-            /* Kompaktowe, ikonowe przyciski sekcji zamiast długiego tekstu */
             nav a {
                 margin-right: 0;
                 background-color: rgba(255, 255, 255, 0.05);
@@ -398,11 +396,9 @@
                 gap: 5px;
             }
 
-            /* Zamiana tekstu na krótsze zwroty z ikonami */
             nav a[href="#uslugi"]::before { content: "🔧 "; }
             nav a[href="#kontakt"]::before { content: "📍 "; }
 
-            /* Pełnowymiarowy, bezpieczny przycisk dzwonienia na dole belki */
             .phone-nav {
                 width: 100%;
                 justify-content: center;
@@ -418,7 +414,7 @@
             }
 
             .hero-text h2 { font-size: 26px; }
-            .collage-wrapper { display: none; } /* Bezpieczne ukrycie na małych ekranach */
+            .collage-wrapper { display: none; } 
             
             .info-row { 
                 flex-direction: column; 
@@ -446,8 +442,8 @@
     <section class="hero-section">
         <div class="hero-text">
             <span class="badge">Niezależny Serwis 4x4</span>
-            <h2>Modele od 2008+ do najnowszych.</h2>
-            <p>Znamy inżynierię i ewolucję brytyjskich ikon. Z pełną precyzją serwisujemy mechanikę, elektronikę oraz inteligentne napędy Terrain Response zarówno starszych wersji, jak i najnowszych modeli premium.</p>
+            <h2>Obsługa wszystkich generacji 4x4.</h2>
+            <p>Znamy inżynierię i ewolucję brytyjskich ikon. Z pełną precyzją serwisujemy mechanikę, elektronikę oraz inteligentne napędy Terrain Response – od klasycznych i sprawdzonych modeli po te całkowicie najnowsze z segmentu premium.</p>
             <a href="#kontakt" class="cta-btn">Skontaktuj się</a>
         </div>
         
