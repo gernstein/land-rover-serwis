@@ -100,13 +100,13 @@
             color: var(--dark) !important;
         }
 
-        /* Nowoczesny układ Hero: Tekst po lewej, Dynamiczny kolaż modeli po prawej */
+        /* Nowoczesny układ Hero z dwoma dużymi zdjęciami najnowszych modeli */
         .hero-section {
             background-color: var(--dark);
             color: white;
             padding: 80px 8%;
             display: grid;
-            grid-template-columns: 1.2fr 1.8fr;
+            grid-template-columns: 1.1fr 1.9fr;
             align-items: center;
             gap: 60px;
             overflow: hidden;
@@ -158,41 +158,48 @@
             box-shadow: 0 6px 20px rgba(197, 160, 89, 0.3);
         }
 
-        /* Dynamiczny Asymetryczny Grid ze współczesnymi Land / Range Roverami */
-        .hero-gallery {
+        /* Nowoczesny, poziomy podział na dwa zdjęcia współczesnych modeli */
+        .hero-gallery-modern {
             display: grid;
-            grid-template-columns: repeat(12, 1fr);
-            grid-template-rows: repeat(12, 40px);
-            gap: 15px;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            height: 380px;
         }
 
-        .gallery-item {
+        .gallery-photo {
             border-radius: var(--radius);
             overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.05);
             position: relative;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            transition: var(--transition);
         }
 
-        .gallery-item:hover {
-            transform: scale(1.02);
-            z-index: 10;
-        }
-
-        .gallery-item img {
+        .gallery-photo img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: brightness(0.9);
+            transition: var(--transition);
         }
 
-        /* Pozycjonowanie elementów grida */
-        .img-1 { grid-column: 1 / 8; grid-row: 1 / 7; }        /* Nowy Defender w błocie */
-        .img-2 { grid-column: 8 / 13; grid-row: 2 / 8; }       /* Nowy Range Rover Sport w górach */
-        .img-3 { grid-column: 2 / 7; grid-row: 7 / 13; }       /* Nowy Discovery 5 na bezdrożach */
-        .img-4 { grid-column: 7 / 12; grid-row: 8 / 12; }      /* Nowy Velar/Evoque na śniegu */
+        .gallery-photo:hover img {
+            transform: scale(1.03);
+        }
 
-        /* Sekcja Usług w formie nowoczesnych kart z ikonami emoji */
+        .photo-label {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            background: rgba(18, 18, 18, 0.75);
+            backdrop-filter: blur(5px);
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            color: var(--secondary);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        /* Sekcja Usług */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -308,7 +315,7 @@
         .map-wrapper {
             border-radius: var(--radius);
             overflow: hidden;
-            height: 335px; /* Wysokość dopasowana do bloku z danymi po lewej */
+            height: 335px;
             border: 1px solid var(--border);
             box-shadow: 0 4px 15px rgba(0,0,0,0.02);
         }
@@ -324,11 +331,11 @@
             border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        /* Responsywność dla urządzeń mobilnych */
+        /* Responsywność */
         @media (max-width: 992px) {
             .hero-section { grid-template-columns: 1fr; text-align: center; gap: 40px; padding: 60px 5%; }
             .hero-text { max-width: 100%; }
-            .hero-gallery { grid-template-rows: repeat(12, 25px); max-width: 600px; margin: 0 auto; width: 100%; }
+            .hero-gallery-modern { height: 300px; max-width: 700px; margin: 0 auto; width: 100%; }
             .info-split { grid-template-columns: 1fr; gap: 40px; }
             .map-wrapper { height: 300px; }
         }
@@ -337,7 +344,7 @@
             header { flex-direction: column; gap: 15px; text-align: center; }
             nav { flex-direction: column; gap: 12px; }
             .hero-text h2 { font-size: 32px; }
-            .hero-gallery { display: none; }
+            .hero-gallery-modern { display: none; }
             .info-row { flex-direction: column; text-align: left; gap: 5px; }
             .info-row .value { text-align: left; }
         }
@@ -353,7 +360,7 @@
         <nav>
             <a href="#uslugi">Specjalizacja</a>
             <a href="#kontakt">Kontakt & Dojazd</a>
-            <a href="tel:+48500100200" class="phone-nav">📞 Zadzwoń bezpośrednio</a>
+            <a href="tel:+48722372085" class="phone-nav">📞 Zadzwoń: +48 722 372 085</a>
         </nav>
     </header>
 
@@ -365,18 +372,15 @@
             <a href="#kontakt" class="cta-btn">Skontaktuj się</a>
         </div>
         
-        <div class="hero-gallery">
-            <div class="gallery-item img-1">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/2020_Land_Rover_Defender_110_D240_First_Edition.jpg" alt="Nowy Land Rover Defender w terenie">
+        <!-- Nowoczesna galeria ze sprawdzonymi grafikami nowych modeli w terenie -->
+        <div class="hero-gallery-modern">
+            <div class="gallery-photo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/2022_Land_Rover_Range_Rover_P400_3.0_LWB.jpg" alt="Nowy Range Rover w trudnym terenie">
+                <div class="photo-label">Range Rover L460</div>
             </div>
-            <div class="gallery-item img-2">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/e/ed/2023_Range_Rover_Sport_D300_Dynamic_SE.jpg" alt="Nowy Range Rover Sport w górach">
-            </div>
-            <div class="gallery-item img-3">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Land_Rover_Discovery_5_in_the_mud.jpg" alt="Land Rover Discovery na szlaku">
-            </div>
-            <div class="gallery-item img-4">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/6/60/2018_Range_Rover_Velar_R-Dynamic_SE_D240_2.0.jpg" alt="Range Rover Velar na zimowej trasie">
+            <div class="gallery-photo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/de/2020_Land_Rover_Defender_110_P400_First_Edition.jpg" alt="Nowy Land Rover Defender w głębokim błocie">
+                <div class="photo-label">Defender 110</div>
             </div>
         </div>
     </section>
@@ -414,7 +418,7 @@
                 <div class="contact-details-box">
                     <div class="info-row">
                         <span class="label">Telefon komórkowy:</span>
-                        <span class="value"><a href="tel:+48722372085">+48 722 372 0850</a></span>
+                        <span class="value"><a href="tel:+48722372085">+48 722 372 085</a></span>
                     </div>
                     <div class="info-row">
                         <span class="label">Adres serwisu:</span>
