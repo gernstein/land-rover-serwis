@@ -68,6 +68,11 @@
             margin-top: -2px;
         }
 
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
         nav a {
             color: rgba(255, 255, 255, 0.75);
             text-decoration: none;
@@ -334,7 +339,7 @@
         .map-wrapper {
             border-radius: var(--radius);
             overflow: hidden;
-            height: 200px; /* Obniżona wysokość mapy */
+            height: 200px; 
             border: 1px solid var(--border);
         }
 
@@ -349,7 +354,7 @@
             border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        /* Dostosowanie do mniejszych rozdzielczości */
+        /* Dostosowanie do mniejszych rozdzielczości desktopowych */
         @media (max-width: 1200px) {
             .services-layout { grid-template-columns: repeat(2, 1fr); }
         }
@@ -365,12 +370,61 @@
             .services-layout { grid-template-columns: 1fr; }
         }
 
+        /* NAPRAWA UKŁADU MOBILNEGO: Dedykowane style dla smartfonów */
         @media (max-width: 576px) {
-            header { flex-direction: column; gap: 10px; text-align: center; }
-            nav a { margin-right: 15px; }
+            header {
+                flex-direction: column;
+                gap: 12px;
+                text-align: center;
+                padding: 12px 4%;
+            }
+
+            nav {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            /* Kompaktowe, ikonowe przyciski sekcji zamiast długiego tekstu */
+            nav a {
+                margin-right: 0;
+                background-color: rgba(255, 255, 255, 0.05);
+                padding: 6px 14px;
+                border-radius: 8px;
+                font-size: 12px;
+                display: inline-flex;
+                align-items: center;
+                gap: 5px;
+            }
+
+            /* Zamiana tekstu na krótsze zwroty z ikonami */
+            nav a[href="#uslugi"]::before { content: "🔧 "; }
+            nav a[href="#kontakt"]::before { content: "📍 "; }
+
+            /* Pełnowymiarowy, bezpieczny przycisk dzwonienia na dole belki */
+            .phone-nav {
+                width: 100%;
+                justify-content: center;
+                padding: 10px;
+                background-color: var(--secondary);
+                color: var(--dark) !important;
+                font-weight: 700;
+                margin-top: 4px;
+            }
+            
+            .phone-nav:hover {
+                background-color: #BD9A2D;
+            }
+
             .hero-text h2 { font-size: 26px; }
-            .collage-wrapper { display: none; }
-            .info-row { flex-direction: column; text-align: left; gap: 3px; }
+            .collage-wrapper { display: none; } /* Bezpieczne ukrycie na małych ekranach */
+            
+            .info-row { 
+                flex-direction: column; 
+                text-align: left; 
+                gap: 3px; 
+            }
             .info-row .value { text-align: left; }
         }
     </style>
@@ -383,8 +437,8 @@
             <p>Sebastian Woźniak</p>
         </div>
         <nav>
-            <a href="#uslugi">Specjalizacja</a>
-            <a href="#kontakt">Kontakt</a>
+            <a href="#uslugi">Oferta</a>
+            <a href="#kontakt">Dojazd</a>
             <a href="tel:+48722372085" class="phone-nav">📞 Zadzwoń: +48 722 372 085</a>
         </nav>
     </header>
@@ -397,7 +451,6 @@
             <a href="#kontakt" class="cta-btn">Skontaktuj się</a>
         </div>
         
-        <!-- Kompaktowy asymetryczny kolaż ze zdjęć nakładających się z wyłączeniem referera -->
         <div class="collage-wrapper">
             <div class="collage-card c-classic">
                 <img src="https://hips.hearstapps.com/hmg-prod/amv-prod-cad-assets/wp-content/uploads/2016/12/2018-Land-Rover-Discovery-prototype-102.jpg" alt="Land Rover Discovery w terenie" referrerpolicy="no-referrer">
@@ -416,7 +469,6 @@
         </div>
     </section>
 
-    <!-- Horyzontalna linia z usługami, oszczędzająca przestrzeń w pionie -->
     <section id="uslugi" class="container-services">
         <div class="services-layout">
             <div class="modern-card">
@@ -450,7 +502,6 @@
         </div>
     </section>
 
-    <!-- Dolna sekcja informacyjna z bezpośrednią mapą Google -->
     <section id="kontakt" class="info-pane">
         <div class="info-split">
             <div>
