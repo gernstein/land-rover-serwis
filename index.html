@@ -6,16 +6,16 @@
     <title>Land Rover Car Serwis | Sebastian Woźniak - Jawczyce</title>
     <style>
         :root {
-            --primary: #0F3E28; /* Głęboka, nowoczesna zieleń butelkowa */
-            --secondary: #C5A059; /* Matowe, nowoczesne złoto szampańskie */
-            --dark: #121212; /* Głęboka czerń jet-black */
+            --primary: #0F3E28; /* Głęboka zieleń butelkowa */
+            --secondary: #C5A059; /* Szampańskie złoto */
+            --dark: #121212; /* Głęboka czerń */
             --light: #F8F9FA;
             --surface: #FFFFFF;
             --text-dark: #1C211F;
             --text-muted: #6C757D;
             --border: #E9ECEF;
-            --radius: 12px;
-            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --radius: 16px;
+            --transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
         * {
@@ -32,13 +32,13 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Nowoczesny, półprzezroczysty nagłówek Blur */
+        /* Nowoczesny nagłówek Blur */
         header {
-            background-color: rgba(18, 18, 18, 0.95);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+            background-color: rgba(18, 18, 18, 0.96);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             color: white;
-            padding: 15px 8%;
+            padding: 18px 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -68,17 +68,12 @@
             margin-top: -2px;
         }
 
-        nav {
-            display: flex;
-            align-items: center;
-            gap: 30px;
-        }
-
         nav a {
             color: rgba(255, 255, 255, 0.75);
             text-decoration: none;
             font-weight: 500;
             font-size: 14px;
+            margin-right: 30px;
             letter-spacing: 0.5px;
             transition: var(--transition);
         }
@@ -90,9 +85,10 @@
         .phone-nav {
             background-color: transparent;
             color: var(--secondary) !important;
-            padding: 8px 18px;
+            padding: 9px 20px;
             border-radius: var(--radius);
             border: 1px solid var(--secondary);
+            margin-right: 0;
         }
 
         .phone-nav:hover {
@@ -100,12 +96,9 @@
             color: var(--dark) !important;
         }
 
-        /* Nowoczesna sekcja Hero z kolażem 3D */
+        /* Nowa Sekcja Hero z dynamicznym przeplataniem i nakładaniem grafik */
         .hero-section {
             background-color: var(--dark);
-            background-image: 
-                radial-gradient(circle at 70% 30%, rgba(15, 62, 40, 0.25) 0%, transparent 60%),
-                radial-gradient(circle at 30% 70%, rgba(28, 33, 31, 0.4) 0%, transparent 50%);
             color: white;
             padding: 100px 8%;
             display: grid;
@@ -114,11 +107,12 @@
             gap: 60px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             overflow: hidden;
+            position: relative;
         }
 
         .hero-text {
             max-width: 500px;
-            z-index: 5;
+            z-index: 10;
         }
 
         .hero-text .badge {
@@ -132,17 +126,17 @@
         }
 
         .hero-text h2 {
-            font-size: 42px;
+            font-size: 44px;
             line-height: 1.2;
             font-weight: 700;
-            margin-bottom: 20px;
-            letter-spacing: -0.5px;
+            margin-bottom: 25px;
+            letter-spacing: -1px;
         }
 
         .hero-text p {
             color: #A0A5A3;
             font-size: 16px;
-            margin-bottom: 35px;
+            margin-bottom: 40px;
         }
 
         .cta-btn {
@@ -163,81 +157,86 @@
             box-shadow: 0 6px 20px rgba(197, 160, 89, 0.3);
         }
 
-        /* Cyfrowa przestrzeń dla kolażu osadzonych sylwetek 4x4 */
-        .collage-container {
+        /* Zaawansowana struktura asymetrycznego kolażu 3D */
+        .collage-wrapper {
             position: relative;
-            height: 400px;
+            height: 480px;
             width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
-        /* Indywidualne warstwy modeli nachodzące na siebie */
-        .collage-layer {
+        .collage-card {
             position: absolute;
             border-radius: var(--radius);
-            padding: 20px;
-            backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            border: 2px solid rgba(255, 255, 255, 0.08);
             transition: var(--transition);
-            cursor: pointer;
+            background-color: #1a1a1a;
         }
 
-        /* 1. Model klasyczny 2008+ ( Discovery 4 / Defender) - W tle po lewej */
-        .layer-classic {
-            width: 60%;
-            height: 220px;
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+        .collage-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-label {
+            position: absolute;
+            bottom: 12px;
+            left: 15px;
+            background: rgba(18, 18, 18, 0.85);
+            backdrop-filter: blur(5px);
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 11px;
+            color: var(--secondary);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            z-index: 5;
+        }
+
+        /* Rozmieszczenie elementów w przestrzeni, nakładanie się i rotacja (efekt świeżości) */
+        
+        /* 1. Discovery 4 (Roczniki 2008+) - Podstawa w tle po lewej */
+        .c-classic {
+            width: 55%;
+            height: 230px;
             left: 0;
-            top: 20px;
+            top: 30px;
             z-index: 1;
-            transform: rotate(-3deg);
+            transform: rotate(-4deg);
         }
 
-        /* 2. Model generacji średniej - Pośrodku i lekko w dole */
-        .layer-mid {
-            width: 65%;
-            height: 240px;
-            background: rgba(15, 62, 40, 0.15);
-            border: 1px solid rgba(15, 62, 40, 0.2);
-            right: 5%;
-            bottom: 30px;
+        /* 2. Zjazd ze wzniesienia w trudnym terenie - W środku, nachodzi na tło */
+        .c-terrain {
+            width: 50%;
+            height: 220px;
+            left: 20%;
+            bottom: 20px;
             z-index: 2;
             transform: rotate(2deg);
         }
 
-        /* 3. Model najnowszej generacji premium - Na pierwszym planie po prawej/górze */
-        .layer-modern {
+        /* 3. Nowy Defender w głębokim błocie - Dynamicznie wysunięty na pierwszym planie po prawej */
+        .c-mud {
             width: 55%;
-            height: 200px;
-            background: rgba(195, 160, 89, 0.08);
-            border: 1px solid rgba(197, 160, 89, 0.25);
+            height: 250px;
             right: 0;
-            top: 40px;
+            top: 60px;
             z-index: 3;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-            transform: translateZ(20px);
+            transform: rotate(-2deg);
+            border-color: rgba(197, 160, 89, 0.3);
         }
 
-        /* Efekty najechania myszką (nachodzenie warstw w 3D) */
-        .layer-classic:hover { z-index: 4; transform: scale(1.05) rotate(0deg); background: rgba(255, 255, 255, 0.05); }
-        .layer-mid:hover { z-index: 4; transform: scale(1.05) rotate(0deg); background: rgba(15, 62, 40, 0.25); }
-        .layer-modern:hover { z-index: 4; transform: scale(1.05) rotate(0deg); background: rgba(195, 160, 89, 0.15); }
-
-        .layer-tag {
-            position: absolute;
-            top: 12px;
-            left: 15px;
-            font-size: 11px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
+        /* Płynne przeplatanie warstw podczas interakcji (efekt 3D) */
+        .collage-card:hover {
+            z-index: 50;
+            transform: scale(1.06) rotate(0deg);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.7);
+            border-color: var(--secondary);
         }
-        .layer-classic .layer-tag { color: rgba(255,255,255,0.4); }
-        .layer-mid .layer-tag { color: var(--secondary); }
-        .layer-modern .layer-tag { color: #FFF; background: var(--primary); padding: 2px 8px; border-radius: 4px; }
 
         /* Sekcja Usług */
         .container {
@@ -311,7 +310,7 @@
             line-height: 1.5;
         }
 
-        /* Sekcja Kontaktowo-Informacyjna */
+        /* Sekcja Kontaktowo-Informacyjna Split-Screen */
         .info-pane {
             background-color: var(--surface);
             border-top: 1px solid var(--border);
@@ -375,16 +374,17 @@
         @media (max-width: 992px) {
             .hero-section { grid-template-columns: 1fr; text-align: center; gap: 40px; padding: 60px 5%; }
             .hero-text { max-width: 100%; }
-            .collage-container { max-width: 500px; margin: 0 auto; height: 350px; }
+            .collage-wrapper { max-width: 600px; margin: 0 auto; height: 400px; }
             .info-split { grid-template-columns: 1fr; gap: 40px; }
             .map-wrapper { height: 300px; }
         }
 
         @media (max-width: 576px) {
             header { flex-direction: column; gap: 15px; text-align: center; }
-            nav { flex-direction: column; gap: 12px; }
+            nav { display: flex; flex-direction: column; gap: 12px; }
+            nav a { margin-right: 0; }
             .hero-text h2 { font-size: 32px; }
-            .collage-container { display: none; } /* Ochrona układu na małych ekranach */
+            .collage-wrapper { display: none; } /* Bezpieczeństwo czytelności na małych smartfonach */
             .info-row { flex-direction: column; text-align: left; gap: 5px; }
             .info-row .value { text-align: left; }
         }
@@ -407,45 +407,30 @@
     <section class="hero-section">
         <div class="hero-text">
             <span class="badge">Niezależny Serwis 4x4</span>
-            <h2>Przekrój generacji. Doświadczenie i pasja.</h2>
-            <p>Znamy ewolucję brytyjskiej inżynierii. Z pełną precyzją obsługujemy zarówno sprawdzone, klasyczne konstrukcje od 2008 roku, jak i najbardziej zaawansowane technologicznie, najnowsze modele Land Rover oraz Range Rover.</p>
-            <a href="#kontakt" class="cta-btn">Skontaktuj się</a>
+            <h2>Od roczników 2008+ do najnowszych generacji.</h2>
+            <p>Znamy pełną ewolucję brytyjskich ikon. Specjalizujemy się w naprawach mechanicznych, elektronice oraz obsłudze napędów Terrain Response zarówno starszych, sprawdzonych modeli, jak i najnowszych SUV-ów premium.</p>
+            <a href="#kontakt" class="cta-btn">Skontaktuj się z nami</a>
         </div>
         
-        <!-- Nowoczesny, interaktywny kolaż 3D z nałożonymi wektorami sylwetek (100% niezawodności) -->
-        <div class="collage-container">
+        <!-- Artystyczny, asymetryczny kolaż ze zdjęć ułożonych warstwowo z wymuszeniem braku referera -->
+        <div class="collage-wrapper">
             
-            <!-- 1. Klasyczna generacja 2008+ (Zarys Discovery / Defender) -->
-            <div class="collage-layer layer-classic">
-                <span class="layer-tag">Generacja 2008+</span>
-                <svg width="100%" height="100%" viewBox="0 0 300 150" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-top:20px;">
-                    <path d="M20 110 L15 100 L20 70 L40 65 L70 65 L95 25 L210 25 L230 65 L270 70 L285 85 L280 110 Z" stroke="rgba(255,255,255,0.15)" stroke-width="1.5" />
-                    <path d="M40 65 L270 70" stroke="rgba(255,255,255,0.25)" stroke-width="2" stroke-dasharray="4 4" />
-                    <circle cx="70" cy="110" r="22" fill="#121212" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
-                    <circle cx="220" cy="110" r="22" fill="#121212" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
-                </svg>
+            <!-- 1. Discovery (Generacja 2008+) -->
+            <div class="collage-card c-classic">
+                <img src="https://hips.hearstapps.com/hmg-prod/amv-prod-cad-assets/wp-content/uploads/2016/12/2018-Land-Rover-Discovery-prototype-102.jpg" alt="Klasyczny Land Rover Discovery w terenie" referrerpolicy="no-referrer">
+                <div class="card-label">Discovery Series</div>
             </div>
 
-            <!-- 2. Średnia generacja SUV -->
-            <div class="collage-layer layer-mid">
-                <span class="layer-tag">Ewolucja linii</span>
-                <svg width="100%" height="100%" viewBox="0 0 300 150" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-top:20px;">
-                    <path d="M30 100 L25 85 L45 55 L90 50 L120 25 L230 25 L255 55 L280 65 L285 100 Z" stroke="var(--secondary)" stroke-width="1.5" opacity="0.4" />
-                    <circle cx="75" cy="100" r="20" fill="#121212" stroke="var(--secondary)" stroke-width="1.5" opacity="0.5"/>
-                    <circle cx="225" cy="100" r="20" fill="#121212" stroke="var(--secondary)" stroke-width="1.5" opacity="0.5"/>
-                </svg>
+            <!-- 2. Klasyczny ekstremalny zjazd (Ewolucja 4x4) -->
+            <div class="collage-card c-terrain">
+                <img src="https://www.themomentmagazine.com/wp-content/uploads/2011/11/downhill1.jpg" alt="Land Rover podczas stromego zjazdu" referrerpolicy="no-referrer">
+                <div class="card-label">Terenowa Ewolucja</div>
             </div>
 
-            <!-- 3. Najnowsza generacja Premium (Zarys nowoczesnej linii luksusowej) -->
-            <div class="collage-layer layer-modern">
-                <span class="layer-tag">Najnowsze modele</span>
-                <svg width="100%" height="100%" viewBox="0 0 300 150" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-top:15px;">
-                    <path d="M15 90 L35 48 L95 45 L220 45 L255 60 L275 90 Z" stroke="#FFF" stroke-width="2" opacity="0.8"/>
-                    <path d="M35 48 L270 52" stroke="var(--secondary)" stroke-width="2.5" opacity="0.9" />
-                    <circle cx="70" cy="90" r="18" fill="#121212" stroke="#FFF" stroke-width="2"/>
-                    <circle cx="210" cy="90" r="18" fill="#121212" stroke="#FFF" stroke-width="2"/>
-                    <path d="M15 65 L35 64" stroke="#FFF" stroke-width="3" stroke-linecap="round"/> <!-- Matrix LED -->
-                </svg>
+            <!-- 3. Nowy Defender w głębokim błocie (Najnowsza generacja) -->
+            <div class="collage-card c-mud">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/92/Land_Rover_Defender_covered_with_mud_after_driving_in_rough_terrain.jpg" alt="Nowy Land Rover Defender w głębokim błocie" referrerpolicy="no-referrer">
+                <div class="card-label">Nowy Defender 110</div>
             </div>
 
         </div>
@@ -460,11 +445,11 @@
             <div class="modern-card">
                 <div class="card-icon">💻</div>
                 <h4>Diagnostyka i Kodowanie</h4>
-                <p>Pełna elektronika, adaptacje zawieszenia pneumatycznego, usuwanie błędów oraz aktualizacje systemów sterujących najnowszych generacji.</p>
+                <p>Pełna elektronika, adaptacje zawieszenia pneumatycznego, usuwanie błędów oraz aktualizacje systemów sterujących wszystkich generacji.</p>
             </div>
             <div class="modern-card">
                 <h4>Zaawansowana Mechanika</h4>
-                <p>Profesjonalny serwis zaawansowanych jednostek napędowych (w tym silników V8, R6 Ingenium oraz systemów hybrydowych MHEV/PHEV).</p>
+                <p>Profesjonalny serwis zaawansowanych jednostek napędowych (w tym legendarnych silników 5.0 V8, R6 Ingenium oraz Diesli).</p>
             </div>
             <div class="modern-card">
                 <h4>Układy Napędowe 4x4</h4>
