@@ -14,8 +14,8 @@
             --text-dark: #1C211F;
             --text-muted: #6C757D;
             --border: #E9ECEF;
-            --radius: 16px;
-            --transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+            --radius: 12px;
+            --transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
         * {
@@ -28,7 +28,7 @@
         body {
             background-color: var(--light);
             color: var(--text-dark);
-            line-height: 1.6;
+            line-height: 1.5;
             -webkit-font-smoothing: antialiased;
         }
 
@@ -38,7 +38,7 @@
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             color: white;
-            padding: 18px 8%;
+            padding: 12px 6%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -49,9 +49,9 @@
         }
 
         .logo h1 {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 700;
-            letter-spacing: 1.5px;
+            letter-spacing: 1px;
             text-transform: uppercase;
         }
 
@@ -61,10 +61,10 @@
         }
 
         .logo p {
-            font-size: 11px;
+            font-size: 10px;
             color: var(--text-muted);
             text-transform: uppercase;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             margin-top: -2px;
         }
 
@@ -72,8 +72,8 @@
             color: rgba(255, 255, 255, 0.75);
             text-decoration: none;
             font-weight: 500;
-            font-size: 14px;
-            margin-right: 30px;
+            font-size: 13px;
+            margin-right: 25px;
             letter-spacing: 0.5px;
             transition: var(--transition);
         }
@@ -85,7 +85,7 @@
         .phone-nav {
             background-color: transparent;
             color: var(--secondary) !important;
-            padding: 9px 20px;
+            padding: 6px 15px;
             border-radius: var(--radius);
             border: 1px solid var(--secondary);
             margin-right: 0;
@@ -96,53 +96,51 @@
             color: var(--dark) !important;
         }
 
-        /* Nowa Sekcja Hero z dynamicznym przeplataniem i nakładaniem grafik */
+        /* Sekcja Główna (Kompaktowy Hero-Split) */
         .hero-section {
             background-color: var(--dark);
             color: white;
-            padding: 100px 8%;
+            padding: 40px 6%;
             display: grid;
-            grid-template-columns: 1.1fr 1.9fr;
+            grid-template-columns: 1fr 1.2fr;
             align-items: center;
-            gap: 60px;
+            gap: 40px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             overflow: hidden;
-            position: relative;
         }
 
         .hero-text {
-            max-width: 500px;
             z-index: 10;
         }
 
         .hero-text .badge {
             color: var(--secondary);
             text-transform: uppercase;
-            font-size: 12px;
-            letter-spacing: 3px;
+            font-size: 11px;
+            letter-spacing: 2px;
             font-weight: 600;
-            margin-bottom: 15px;
+            margin-bottom: 8px;
             display: block;
         }
 
         .hero-text h2 {
-            font-size: 44px;
+            font-size: 32px;
             line-height: 1.2;
             font-weight: 700;
-            margin-bottom: 25px;
-            letter-spacing: -1px;
+            margin-bottom: 15px;
+            letter-spacing: -0.5px;
         }
 
         .hero-text p {
             color: #A0A5A3;
-            font-size: 16px;
-            margin-bottom: 40px;
+            font-size: 14.5px;
+            margin-bottom: 25px;
         }
 
         .cta-btn {
             background-color: var(--secondary);
             color: var(--dark);
-            padding: 14px 35px;
+            padding: 10px 25px;
             text-decoration: none;
             font-weight: 600;
             letter-spacing: 0.5px;
@@ -150,6 +148,7 @@
             transition: var(--transition);
             display: inline-block;
             box-shadow: 0 4px 15px rgba(197, 160, 89, 0.2);
+            font-size: 14px;
         }
 
         .cta-btn:hover {
@@ -157,10 +156,10 @@
             box-shadow: 0 6px 20px rgba(197, 160, 89, 0.3);
         }
 
-        /* Zaawansowana struktura asymetrycznego kolażu 3D */
+        /* Odchudzona struktura asymetrycznego kolażu */
         .collage-wrapper {
             position: relative;
-            height: 480px;
+            height: 280px;
             width: 100%;
         }
 
@@ -168,7 +167,7 @@
             position: absolute;
             border-radius: var(--radius);
             overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.5);
             border: 2px solid rgba(255, 255, 255, 0.08);
             transition: var(--transition);
             background-color: #1a1a1a;
@@ -183,156 +182,137 @@
 
         .card-label {
             position: absolute;
-            bottom: 12px;
-            left: 15px;
+            bottom: 8px;
+            left: 10px;
             background: rgba(18, 18, 18, 0.85);
             backdrop-filter: blur(5px);
-            padding: 4px 12px;
-            border-radius: 6px;
-            font-size: 11px;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 10px;
             color: var(--secondary);
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             z-index: 5;
         }
 
-        /* Rozmieszczenie elementów w przestrzeni, nakładanie się i rotacja (efekt świeżości) */
-        
-        /* 1. Discovery 4 (Roczniki 2008+) - Podstawa w tle po lewej */
+        /* Kompaktowe pozycjonowanie przeplatających się grafik */
         .c-classic {
-            width: 55%;
-            height: 230px;
+            width: 50%;
+            height: 160px;
             left: 0;
-            top: 30px;
+            top: 10px;
             z-index: 1;
-            transform: rotate(-4deg);
+            transform: rotate(-3deg);
         }
 
-        /* 2. Zjazd ze wzniesienia w trudnym terenie - W środku, nachodzi na tło */
         .c-terrain {
-            width: 50%;
-            height: 220px;
-            left: 20%;
-            bottom: 20px;
+            width: 48%;
+            height: 150px;
+            left: 22%;
+            bottom: 10px;
             z-index: 2;
             transform: rotate(2deg);
         }
 
-        /* 3. Nowy Defender w głębokim błocie - Dynamicznie wysunięty na pierwszym planie po prawej */
         .c-mud {
-            width: 55%;
-            height: 250px;
+            width: 50%;
+            height: 180px;
             right: 0;
-            top: 60px;
+            top: 30px;
             z-index: 3;
-            transform: rotate(-2deg);
+            transform: rotate(-1deg);
             border-color: rgba(197, 160, 89, 0.3);
         }
 
-        /* Płynne przeplatanie warstw podczas interakcji (efekt 3D) */
         .collage-card:hover {
             z-index: 50;
-            transform: scale(1.06) rotate(0deg);
-            box-shadow: 0 30px 60px rgba(0,0,0,0.7);
+            transform: scale(1.05) rotate(0deg);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
             border-color: var(--secondary);
         }
 
-        /* Sekcja Usług */
-        .container {
-            max-width: 1200px;
+        /* Kompaktowa Sekcja Usług (Horyzontalna linia pod Hero) */
+        .container-services {
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 90px 20px;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-header h3 {
-            font-size: 32px;
-            font-weight: 700;
-            color: var(--primary);
-            letter-spacing: -0.5px;
-        }
-
-        .section-header p {
-            color: var(--text-muted);
-            font-size: 15px;
-            margin-top: 5px;
+            padding: 30px 6px;
         }
 
         .services-layout {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
         }
 
         .modern-card {
             background: var(--surface);
-            padding: 35px;
+            padding: 20px;
             border-radius: var(--radius);
             border: 1px solid var(--border);
             transition: var(--transition);
             display: flex;
-            flex-direction: column;
+            gap: 15px;
+            align-items: center;
         }
 
         .modern-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(15, 62, 40, 0.05);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(15, 62, 40, 0.05);
             border-color: rgba(15, 62, 40, 0.15);
         }
 
         .card-icon {
-            font-size: 28px;
-            margin-bottom: 20px;
+            font-size: 20px;
             background: rgba(15, 62, 40, 0.05);
-            width: 55px;
-            height: 55px;
+            width: 42px;
+            height: 42px;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 50%;
             color: var(--primary);
+            flex-shrink: 0;
         }
 
-        .modern-card h4 {
-            font-size: 18px;
-            margin-bottom: 12px;
+        .card-text h4 {
+            font-size: 15px;
+            margin-bottom: 4px;
             font-weight: 600;
         }
 
         .modern-card p {
             color: var(--text-muted);
-            font-size: 14.5px;
-            line-height: 1.5;
+            font-size: 13px;
+            line-height: 1.4;
         }
 
-        /* Sekcja Kontaktowo-Informacyjna Split-Screen */
+        /* Dolna sekcja Split-Screen (Dane + Mapa) */
         .info-pane {
             background-color: var(--surface);
             border-top: 1px solid var(--border);
+            padding: 40px 6%;
         }
 
         .info-split {
+            max-width: 1400px;
+            margin: 0 auto;
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 40px;
             align-items: start;
         }
 
         .pane-title {
-            font-size: 22px;
+            font-size: 18px;
             font-weight: 600;
-            margin-bottom: 25px;
+            margin-bottom: 15px;
             color: var(--primary);
         }
 
         .contact-details-box {
             background: var(--light);
-            padding: 30px;
+            padding: 20px;
             border-radius: var(--radius);
             border: 1px solid var(--border);
         }
@@ -340,9 +320,9 @@
         .info-row {
             display: flex;
             justify-content: space-between;
-            padding: 15px 0;
+            padding: 10px 0;
             border-bottom: 1px solid rgba(0,0,0,0.04);
-            font-size: 15px;
+            font-size: 14px;
         }
 
         .info-row:last-child { border: none; }
@@ -354,9 +334,8 @@
         .map-wrapper {
             border-radius: var(--radius);
             overflow: hidden;
-            height: 335px;
+            height: 200px; /* Obniżona wysokość mapy */
             border: 1px solid var(--border);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
         }
 
         .map-wrapper iframe { width: 100%; height: 100%; border: 0; }
@@ -364,28 +343,34 @@
         footer {
             background-color: var(--dark);
             color: #7A8285;
-            padding: 40px 20px;
+            padding: 20px 6%;
             text-align: center;
-            font-size: 13.5px;
+            font-size: 12px;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        /* Responsywność */
+        /* Dostosowanie do mniejszych rozdzielczości */
+        @media (max-width: 1200px) {
+            .services-layout { grid-template-columns: repeat(2, 1fr); }
+        }
+
         @media (max-width: 992px) {
-            .hero-section { grid-template-columns: 1fr; text-align: center; gap: 40px; padding: 60px 5%; }
+            .hero-section { grid-template-columns: 1fr; text-align: center; padding: 40px 5%; }
             .hero-text { max-width: 100%; }
-            .collage-wrapper { max-width: 600px; margin: 0 auto; height: 400px; }
-            .info-split { grid-template-columns: 1fr; gap: 40px; }
-            .map-wrapper { height: 300px; }
+            .collage-wrapper { max-width: 500px; margin: 0 auto; height: 240px; }
+            .info-split { grid-template-columns: 1fr; gap: 30px; }
+        }
+
+        @media (max-width: 768px) {
+            .services-layout { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 576px) {
-            header { flex-direction: column; gap: 15px; text-align: center; }
-            nav { display: flex; flex-direction: column; gap: 12px; }
-            nav a { margin-right: 0; }
-            .hero-text h2 { font-size: 32px; }
-            .collage-wrapper { display: none; } /* Bezpieczeństwo czytelności na małych smartfonach */
-            .info-row { flex-direction: column; text-align: left; gap: 5px; }
+            header { flex-direction: column; gap: 10px; text-align: center; }
+            nav a { margin-right: 15px; }
+            .hero-text h2 { font-size: 26px; }
+            .collage-wrapper { display: none; }
+            .info-row { flex-direction: column; text-align: left; gap: 3px; }
             .info-row .value { text-align: left; }
         }
     </style>
@@ -399,7 +384,7 @@
         </div>
         <nav>
             <a href="#uslugi">Specjalizacja</a>
-            <a href="#kontakt">Kontakt & Dojazd</a>
+            <a href="#kontakt">Kontakt</a>
             <a href="tel:+48722372085" class="phone-nav">📞 Zadzwoń: +48 722 372 085</a>
         </nav>
     </header>
@@ -407,63 +392,67 @@
     <section class="hero-section">
         <div class="hero-text">
             <span class="badge">Niezależny Serwis 4x4</span>
-            <h2>Od roczników 2008+ do najnowszych generacji.</h2>
-            <p>Znamy pełną ewolucję brytyjskich ikon. Specjalizujemy się w naprawach mechanicznych, elektronice oraz obsłudze napędów Terrain Response zarówno starszych, sprawdzonych modeli, jak i najnowszych SUV-ów premium.</p>
-            <a href="#kontakt" class="cta-btn">Skontaktuj się z nami</a>
+            <h2>Modele od 2008+ do najnowszych.</h2>
+            <p>Znamy inżynierię i ewolucję brytyjskich ikon. Z pełną precyzją serwisujemy mechanikę, elektronikę oraz inteligentne napędy Terrain Response zarówno starszych wersji, jak i najnowszych modeli premium.</p>
+            <a href="#kontakt" class="cta-btn">Skontaktuj się</a>
         </div>
         
-        <!-- Artystyczny, asymetryczny kolaż ze zdjęć ułożonych warstwowo z wymuszeniem braku referera -->
+        <!-- Kompaktowy asymetryczny kolaż ze zdjęć nakładających się z wyłączeniem referera -->
         <div class="collage-wrapper">
-            
-            <!-- 1. Discovery (Generacja 2008+) -->
             <div class="collage-card c-classic">
-                <img src="https://hips.hearstapps.com/hmg-prod/amv-prod-cad-assets/wp-content/uploads/2016/12/2018-Land-Rover-Discovery-prototype-102.jpg" alt="Klasyczny Land Rover Discovery w terenie" referrerpolicy="no-referrer">
+                <img src="https://hips.hearstapps.com/hmg-prod/amv-prod-cad-assets/wp-content/uploads/2016/12/2018-Land-Rover-Discovery-prototype-102.jpg" alt="Land Rover Discovery w terenie" referrerpolicy="no-referrer">
                 <div class="card-label">Discovery Series</div>
             </div>
 
-            <!-- 2. Klasyczny ekstremalny zjazd (Ewolucja 4x4) -->
             <div class="collage-card c-terrain">
-                <img src="https://www.themomentmagazine.com/wp-content/uploads/2011/11/downhill1.jpg" alt="Land Rover podczas stromego zjazdu" referrerpolicy="no-referrer">
+                <img src="https://www.themomentmagazine.com/wp-content/uploads/2011/11/downhill1.jpg" alt="Land Rover stromy zjazd" referrerpolicy="no-referrer">
                 <div class="card-label">Terenowa Ewolucja</div>
             </div>
 
-            <!-- 3. Nowy Defender w głębokim błocie (Najnowsza generacja) -->
             <div class="collage-card c-mud">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/9/92/Land_Rover_Defender_covered_with_mud_after_driving_in_rough_terrain.jpg" alt="Nowy Land Rover Defender w głębokim błocie" referrerpolicy="no-referrer">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/92/Land_Rover_Defender_covered_with_mud_after_driving_in_rough_terrain.jpg" alt="Nowy Land Rover Defender w błocie" referrerpolicy="no-referrer">
                 <div class="card-label">Nowy Defender 110</div>
             </div>
-
         </div>
     </section>
 
-    <section id="uslugi" class="container">
-        <div class="section-header">
-            <h3>Zakres Specjalizacji</h3>
-            <p>Dedykowane rozwiązania serwisowe dopasowane do specyfiki brytyjskich SUV-ów</p>
-        </div>
+    <!-- Horyzontalna linia z usługami, oszczędzająca przestrzeń w pionie -->
+    <section id="uslugi" class="container-services">
         <div class="services-layout">
             <div class="modern-card">
                 <div class="card-icon">💻</div>
-                <h4>Diagnostyka i Kodowanie</h4>
-                <p>Pełna elektronika, adaptacje zawieszenia pneumatycznego, usuwanie błędów oraz aktualizacje systemów sterujących wszystkich generacji.</p>
+                <div class="card-text">
+                    <h4>Diagnostyka</h4>
+                    <p>Elektronika, błędy i kodowanie modułów.</p>
+                </div>
             </div>
             <div class="modern-card">
-                <h4>Zaawansowana Mechanika</h4>
-                <p>Profesjonalny serwis zaawansowanych jednostek napędowych (w tym legendarnych silników 5.0 V8, R6 Ingenium oraz Diesli).</p>
+                <div class="card-icon">⚙️</div>
+                <div class="card-text">
+                    <h4>Mechanika</h4>
+                    <p>Obsługa silników w tym zaawansowanych V8.</p>
+                </div>
             </div>
             <div class="modern-card">
-                <h4>Układy Napędowe 4x4</h4>
-                <p>Naprawa, uszczelnianie i diagnostyka inteligentnych napędów Terrain Response, skrzyń rozdzielczych (reduktorów) oraz przekładni automatycznych.</p>
+                <div class="card-icon">🔄</div>
+                <div class="card-text">
+                    <h4>Napędy 4x4</h4>
+                    <p>Serwis reduktorów i systemów Terrain Response.</p>
+                </div>
             </div>
             <div class="modern-card">
-                <h4>Obsługa Eksploatacyjna</h4>
-                <p>Dynamiczna wymiana olejów, kompleksowy serwis układów hamulcowych oraz przygotowywanie pojazdów do wymagających wypraw off-road.</p>
+                <div class="card-icon">🔧</div>
+                <div class="card-text">
+                    <h4>Eksploatacja</h4>
+                    <p>Dynamiczne wymiany olejów i hamulce.</p>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- Dolna sekcja informacyjna z bezpośrednią mapą Google -->
     <section id="kontakt" class="info-pane">
-        <div class="container info-split">
+        <div class="info-split">
             <div>
                 <h4 class="pane-title">Dane Kontaktowe</h4>
                 <div class="contact-details-box">
@@ -489,7 +478,6 @@
             <div>
                 <h4 class="pane-title">Mapa Dojazdu</h4>
                 <div class="map-wrapper">
-                    <!-- Bezpośrednie osadzenie oficjalnego kodu Iframe Twojej wizytówki Google Maps -->
                     <iframe 
                         src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d50544.46698612407!2d20.186404!3d49.950112!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47163f00307f7a99%3A0xd618ff97240f2f3!2sLand%20Rover%20Car%20Serwis%20-%20Sebastian%20Wo%C5%BAniak!5e1!3m2!1spl!2spl!4v1783958766075!5m2!1spl!2spl"
                         allowfullscreen="" 
@@ -503,7 +491,6 @@
 
     <footer>
         <p>© 2026 LAND ROVER CAR SERWIS Sebastian Woźniak. Wszelkie prawa zastrzeżone.</p>
-        <p style="font-size: 11.5px; color: #4A5052; margin-top: 5px;">Niezależny, wyspecjalizowany serwis. Nazwy marek i logotypy zostały użyte wyłącznie w celach informacyjnych.</p>
     </footer>
 
 </body>
